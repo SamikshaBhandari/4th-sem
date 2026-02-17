@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Product Filter</h2>
+    <label>Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterData()">
+      <option value="all">Show All</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Furniture">Furniture</option>
+    </select>
+
+    <div id="productDisplay" style="margin-top: 20px"></div>
+
+    <script>
+      const products = [
+        { name: "Laptop", cat: "Electronics" },
+        { name: "Sofa", cat: "Furniture" },
+        { name: "Smartphone", cat: "Electronics" },
+        { name: "Table", cat: "Furniture" },
+      ];
+
+      function filterData() {
+        const selected = document.getElementById("categoryFilter").value;
+        const display = document.getElementById("productDisplay");
+
+        // Logic to filter
+        const filtered =
+          selected === "all"
+            ? products
+            : products.filter((p) => p.cat === selected);
+
+        // Logic to update DOM
+        display.innerHTML = filtered
+          .map(
+            (p) =>
+              `<div style="padding:5px; border-bottom:1px solid #ccc;">
+                    <b>${p.name}</b> - ${p.cat}
+                </div>`,
+          )
+          .join("");
+      }
+
+      // Initial call to display all products on load
+      filterData();
+    </script>
+  </body>
+</html>

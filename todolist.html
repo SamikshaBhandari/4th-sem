@@ -25,11 +25,9 @@
 
         if (input.value.trim() === "") return;
 
-        // Create <li> element
         const li = document.createElement("li");
         li.innerHTML = `${input.value} <button onclick="this.parentElement.remove()">Delete</button>`;
 
-        // Toggle completed status
         li.onclick = function (e) {
           if (e.target.tagName !== "BUTTON") {
             li.classList.toggle("done");
@@ -37,7 +35,7 @@
         };
 
         list.appendChild(li);
-        input.value = ""; // Reset input field
+        input.value = "";
       }
     </script>
   </body>

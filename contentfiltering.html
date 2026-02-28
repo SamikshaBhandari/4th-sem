@@ -23,13 +23,11 @@
         const selected = document.getElementById("categoryFilter").value;
         const display = document.getElementById("productDisplay");
 
-        // Logic to filter
         const filtered =
           selected === "all"
             ? products
             : products.filter((p) => p.cat === selected);
 
-        // Logic to update DOM
         display.innerHTML = filtered
           .map(
             (p) =>
@@ -40,7 +38,6 @@
           .join("");
       }
 
-      // Initial call to display all products on load
       filterData();
     </script>
   </body>

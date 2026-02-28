@@ -1,7 +1,6 @@
 <?php
 include 'connect.php';
 
-// Fetch all user IDs and usernames from the database
 $result = mysqli_query($conn, "SELECT id, username FROM users");
 ?>
 

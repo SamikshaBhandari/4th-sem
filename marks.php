@@ -10,7 +10,6 @@ function checkResult($marks) {
     }
 }
 
-// 3. Set a sample marks value
 $myMarks = 75;
 
 // 4. Call the function and print the result
